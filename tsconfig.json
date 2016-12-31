@@ -22,7 +22,7 @@
   "angularCompilerOptions": {
     "debug": false
   },
-  "compileOnSave": false,
-  "buildOnSave": false,
+  "compileOnSave": true,
+  "buildOnSave": true,
   "atom": { "rewriteTsconfig": false }
 }
