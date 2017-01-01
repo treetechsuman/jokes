@@ -18,7 +18,7 @@ export class JokeListComponent implements OnInit {
 	  jokes:Joke[];
   	selectedJoke: Joke;
     mode = 'Observable';
-    errorMessage;
+    errorMessage:String;
 
   constructor(
     private router: Router,

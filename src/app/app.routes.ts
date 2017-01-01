@@ -9,6 +9,10 @@ import { ContactComponent } from './contact/contact.component';
 import {JokeListComponent} from './joke/joke-list.component';
 import  {CreateJokeComponent} from './joke/create-joke.component';
 import  {UpdateJokeComponent} from './joke/update-joke.component';
+import  {LoginComponent} from './user/login.component';
+import  {SignupComponent} from './user/signup.component';
+import  {UserListComponent} from './user/user-list.component';
+import  {UpdateUserComponent} from './user/update-user.component';
 
 
 
@@ -16,7 +20,7 @@ export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'joke', component: JokeListComponent},
-  { path: 'joke/create-joke', component: CreateJokeComponent},
+  { path: 'create-joke', component: CreateJokeComponent},
   { path: 'joke/update-joke/:{id}', component: UpdateJokeComponent},
   { path: 'about', component: AboutComponent },
   { path: 'github', component: RepoBrowserComponent,
@@ -29,6 +33,10 @@ export const rootRouterConfig: Routes = [
         ]
       }]
   },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'users', component: UserListComponent },
+  { path: 'users/update-user/:{id}', component: UpdateUserComponent},
 ];
 

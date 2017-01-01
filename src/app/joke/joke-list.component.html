@@ -1,6 +1,8 @@
-
-<a [routerLink]="['/joke/create-joke']" class="btn btn-info">Add new Joke</a> 
-<div *ngFor='let joke of jokes' class="panel panel-default small shadow">
+<!-- <div class="col-md-12">
+	<a [routerLink]="['/joke/create-joke']" class="btn btn-info">Add new Joke</a> 
+</div> -->
+<h3>Joke List</h3>
+<div *ngFor='let joke of jokes' class=" panel panel-default small shadow">
 	<div class="panel-heading">
 		{{joke.title}}{{joke.id}}
 		<div class="btn-group pull-right">
@@ -14,8 +16,8 @@
 			</a>
 		</div>
 	</div>
-	<div class="panel-body">
-		{{joke.content}}
+	<div class="panel-body" [innerHTML]="joke.content">
+		
 	</div>
 	<div class="panel-footer">
 		<div class="btn-group">

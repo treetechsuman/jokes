@@ -6,6 +6,7 @@ import { GithubService } from './github/shared/github.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -17,13 +18,18 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import  {CreateJokeComponent} from './joke/create-joke.component';
 import  {UpdateJokeComponent} from './joke/update-joke.component';
+import  {LoginComponent} from './user/login.component';
+import  {SignupComponent} from './user/signup.component';
+import  {UserListComponent} from './user/user-list.component';
+import  {UpdateUserComponent} from './user/update-user.component';
 
 import {JokeService} from './service/joke.service';
+import {UserService} from './service/user.service';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule, InMemoryBackendService } from 'angular2-in-memory-web-api';
 import { InMemoryDataService }  from './service/in-memory-data.service';
-
+import { InMemoryUserDataService }  from './service/in-memory-user-date.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +42,11 @@ import { InMemoryDataService }  from './service/in-memory-data.service';
     ContactComponent,
     CreateJokeComponent,
     UpdateJokeComponent,
+    LoginComponent,
+    SignupComponent,
+    UserListComponent,
+    UpdateUserComponent,
+
     
   ],
   imports: [
@@ -44,11 +55,14 @@ import { InMemoryDataService }  from './service/in-memory-data.service';
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true }),
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+  
+    CKEditorModule,
   ],
   providers: [
     GithubService,
     JokeService,
+    UserService,
   ],
   bootstrap: [ AppComponent ]
 })
