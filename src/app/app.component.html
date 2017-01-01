@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,37 +14,67 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li class="active">
-          <a [routerLink]="['/']">
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/home']">
             Home
           </a>
         </li>
-        <li>
+        <li [routerLinkActive]="['active']">
           <a [routerLink]="['/joke']">
             Joke
           </a>
         </li>
-        <li>
+        <li [routerLinkActive]="['active']">
           <a [routerLink]="['/about']">
             About
           </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+        <a [routerLink]="['/create-joke']" >Add new Joke</a> 
         </li>
         <!-- <li>
           <a [routerLink]="['/github','angular']">
             Github Repos
           </a>
         </li> -->
-        <li>
+        <li [routerLinkActive]="['active']">
           <a [routerLink]="['/contact']">
             Contact
           </a>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/signup']">
+            <span class="glyphicon glyphicon-user"></span>
+            Sign Up
+          </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/login']">
+            <span class="glyphicon glyphicon-log-in"></span>
+            Login
+          </a>
+        </li>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="glyphicon glyphicon-list"></span>
+          Profile
+
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Change</a></li>
+          <li><a href="#">My Jokes</a></li>
+          <li><a [routerLink]="['/users']">User List</a></li>
+        </ul>
+      </li>
+      </ul>
       
       </div><!------collapes-------->
       </div><!------container-fluid-------->
     </nav>
-    <div class="container">
+    <div class="container mycontainer">
       <div class="row">
         <div class="col-md-12 content">
           <main>
@@ -54,69 +84,68 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row">      
-          <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-          <!--footer start from here-->
-          <footer>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 col-sm-6 footerleft ">
-                  <div class="logofooter"> Joke Pokhari</div>
-                  <p>Share joke,have fun with friends</p>
-                  <p><i class="fa fa-map-pin"></i> Kathmandu,Nepal</p>
-                  <p><i class="fa fa-phone"></i> Phone (Nepal) : +977-9849949205</p>
-                  <p><i class="fa fa-envelope"></i> E-mail : info@treetechsolution.com</p>
-                  
-                </div>
-                <div class="col-md-2 col-sm-6 paddingtop-bottom">
-                  <h6 class="heading7">GENERAL LINKS</h6>
-                  <ul class="footer-ul">
-                    <li><a href="#"> Career</a></li>
-                    <li><a href="#"> Privacy Policy</a></li>
-                    <li><a href="#"> Terms & Conditions</a></li>
-                    <li><a href="#"> Client Gateway</a></li>
-                    <li><a href="#"> Ranking</a></li>
-                    <li><a href="#"> Case Studies</a></li>
-                    <li><a href="#"> Frequently Ask Questions</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                  <h6 class="heading7">LATEST Jokes</h6>
-                  <div class="post">
-                    <p>facebook crack  <span>August 3,2015</span></p>
-                    <p>facebook u <span>August 3,2015</span></p>
-                    <p> advertisment code:what it means for you <span>August 3,2015</span></p>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                  <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                    <div class="fb-xfbml-parse-ignore">
-                      <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
-                    </div>
-                  </div>
-                </div>
+      <div class="row">
+        <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <!--footer start from here-->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 footerleft ">
+                <div class="logofooter"> Joke Pokhari</div>
+                <p>Share joke,have fun with friends</p>
+                <p><i class="fa fa-map-pin"></i> Kathmandu,Nepal</p>
+                <p><i class="fa fa-phone"></i> Phone (Nepal) : +977-9849949205</p>
+                <p><i class="fa fa-envelope"></i> E-mail : info@treetechsolution.com</p>
+                
               </div>
-            </div>
-          </footer>
-          <!--footer start from here-->
-
-          <div class="copyright">
-            <div class="container">
-              <div class="col-md-6">
-                <p>© 2016 - All Rights with treeTech solution</p>
-              </div>
-              <div class="col-md-6">
-                <ul class="bottom_ul">
-                  <li><a href="#">treetechsolution.com</a></li>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Faq's</a></li>
-                  <li><a href="#">Contact us</a></li>
-                  <li><a href="#">Site Map</a></li>
+              <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">GENERAL LINKS</h6>
+                <ul class="footer-ul">
+                  <li><a href="#"> Career</a></li>
+                  <li><a href="#"> Privacy Policy</a></li>
+                  <li><a href="#"> Terms & Conditions</a></li>
+                  <li><a href="#"> Client Gateway</a></li>
+                  <li><a href="#"> Ranking</a></li>
+                  <li><a href="#"> Case Studies</a></li>
+                  <li><a href="#"> Frequently Ask Questions</a></li>
                 </ul>
               </div>
+              <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">LATEST Jokes</h6>
+                <div class="post">
+                  <p>facebook crack  <span>August 3,2015</span></p>
+                  <p>facebook u <span>August 3,2015</span></p>
+                  <p> advertisment code:what it means for you <span>August 3,2015</span></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                  <div class="fb-xfbml-parse-ignore">
+                    <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>       
+          </div>
+        </footer>
+        <!--footer start from here-->
+        <div class="copyright">
+          <div class="container">
+            <div class="col-md-6">
+              <p>© 2016 - All Rights with treeTech solution</p>
+            </div>
+            <div class="col-md-6">
+              <ul class="bottom_ul">
+                <li><a href="#">treetechsolution.com</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Faq's</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Site Map</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
         
       </div>
     </div>

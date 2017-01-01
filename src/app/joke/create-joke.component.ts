@@ -18,7 +18,7 @@ export class CreateJokeComponent implements OnInit{
 	jokes:Joke[]=[];
 	joke:Joke;
 	mode = 'Observable';
-	errorMessage;
+	errorMessage:String;
 	constructor(
 		private jokeService: JokeService,
 		private router: Router
