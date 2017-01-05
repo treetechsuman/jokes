@@ -11,11 +11,11 @@ import {Token} from './../model/token.model';
 
 @Component({
 	
-  selector: 'loginForm',
-  templateUrl: './login.component.html',
+  selector: 'menu',
+  templateUrl: './menu.component.html',
  
 })
-export class LoginComponent implements OnInit {
+export class MenuComponent implements OnInit {
 	token: Token;
 	tokenString:string;
 	constructor(

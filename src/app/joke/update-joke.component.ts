@@ -14,7 +14,7 @@ import { JokeService } from './../service/joke.service';
 export class UpdateJokeComponent implements OnInit{
 	jokes:Joke[]=[];
 	selectedJoke:Joke;
-	errorMessage;
+	errorMessage:String;
 	mode = 'Observable';
 	private id: number;
   	private sub: any;
@@ -30,8 +30,8 @@ export class UpdateJokeComponent implements OnInit{
        this.jokeService.getJoke(+params["{id}"])
                      .subscribe(
                        jokes =>{
-                       	this.selectedJoke = jokes
-                       	//console.log(this.selectedJoke.title);
+                       	this.selectedJoke = jokes;
+                       	//console.log(jokes);
                        },
                        error =>  this.errorMessage = <any>error);
      });

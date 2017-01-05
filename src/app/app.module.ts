@@ -22,9 +22,11 @@ import  {LoginComponent} from './user/login.component';
 import  {SignupComponent} from './user/signup.component';
 import  {UserListComponent} from './user/user-list.component';
 import  {UpdateUserComponent} from './user/update-user.component';
+import { MenuComponent } from './menu/menu.component';
 
 import {JokeService} from './service/joke.service';
 import {UserService} from './service/user.service';
+import {AuthGuardService} from './service/auth-gard.service';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule, InMemoryBackendService } from 'angular2-in-memory-web-api';
@@ -46,6 +48,7 @@ import { InMemoryUserDataService }  from './service/in-memory-user-date.service'
     SignupComponent,
     UserListComponent,
     UpdateUserComponent,
+    MenuComponent,
 
     
   ],
@@ -63,6 +66,7 @@ import { InMemoryUserDataService }  from './service/in-memory-user-date.service'
     GithubService,
     JokeService,
     UserService,
+    AuthGuardService,
   ],
   bootstrap: [ AppComponent ]
 })

@@ -17,14 +17,16 @@ import 'rxjs/add/operator/catch';
 export class JokeService {
 	private headers = new Headers({'Content-Type': 'application/json'});
 
-	private jokeUrl = 'app/jokes';  // URL to web api
+	private jokeUrl = 'api/jokes';  // URL to web api
 
 	constructor(private http: Http) { }
 
-	getJokes (): Observable<Joke[]> {		
+	getJokes (): Observable<Joke[]> {	
+	 //console.log('conthere');	
     	return this.http.get(this.jokeUrl)
                     .map(this.extractData)
                     .catch(this.handleError);
+
   	}
 
   	getJoke(id: number): Observable<Joke> {
@@ -34,13 +36,7 @@ export class JokeService {
   		.catch(this.handleError);
   	}
 
-  	getJokesSlowly(): Observable<Joke[]> {
-  		return new Observable(resolve => {
-  			// Simulate server latency with 2 second delay
-  			setTimeout(() => resolve(this.getJokes()), 2000);
-  		});
-  	}
-
+  	
   	create( joke: Joke): Observable<Joke> {
   		let headers = new Headers({ 'Content-Type': 'application/json' });
   		let options = new RequestOptions({ headers: headers });
@@ -50,6 +46,7 @@ export class JokeService {
   	} 
 
 	update(joke: Joke): Observable<Joke> {
+		//alert('djhkjhd');
 		const url = `${this.jokeUrl}/${joke.id}`;
 		return this.http.put(url, JSON.stringify(joke), {headers: this.headers})
 					.map(this.extractData)

@@ -32,16 +32,25 @@ export class JokeListComponent implements OnInit {
   getJokes() {
     this.jokeService.getJokes()
                      .subscribe(
-                       jokes =>this.jokes = jokes,
-                       error =>  this.errorMessage = <any>error);                   
+                       jokes =>{
+                         this.jokes = jokes;
+                         console.log(this.jokes);
+                       },
+                       error =>  this.errorMessage = <any>error); 
+   //console.log(this.errorMessage);                   
   }
 
   like(joke: Joke){
+
     this.selectedJoke = joke;
     this.selectedJoke.like =  joke.like + 1;  
     this.jokeService.update(this.selectedJoke)
     .subscribe(
-      joke  => this.jokes.push(joke),
+      joke  => {
+        this.jokes.push(joke);
+        console.log(joke);
+        alert('djhkjhd');
+      },
       error =>  this.errorMessage = <any>error);  
   }
 

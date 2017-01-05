@@ -5,6 +5,7 @@ import { Headers, RequestOptions } from '@angular/http';
 //import 'rxjs/add/operator/toPromise';
 
 import { User } from './../model/user.model';
+import { Token } from './../model/token.model';
 import { Observable }     from 'rxjs/Observable';
 
 // Statics
@@ -13,6 +14,7 @@ import 'rxjs/add/observable/throw';
 // Operators
 import 'rxjs/add/operator/catch';
 
+
 @Injectable()
 export class UserService {
 	private headers = new Headers({'Content-Type': 'application/json'});
@@ -20,6 +22,27 @@ export class UserService {
 	private userUrl = 'app/users';  // URL to web api
 
 	constructor(private http: Http) { }
+
+	/*login( email:String, password:String): Observable <Token> {
+		let headers = new Headers({ 'Content-Type': 'application/json' });
+  		let options = new RequestOptions({ headers: headers });
+	    event.preventDefault();
+	    let body = JSON.stringify({ email, password });
+	    return this.http.post('app/tokens', body, options)
+	     	.map(this.extractData)
+            .catch(this.handleError);
+        return this.http.get('app/tokens')
+	     	.map(this.extractData)
+            .catch(this.handleError);
+             
+
+	      //localStorage.setItem('id_token', 'wowlogin');
+	      //alert(localStorage.getItem('id_token'));
+    }*/
+
+    login(email:String, password:String){
+    	return 'sldfjsdlfjlksdfj';
+    }
 
 	getUsers (): Observable<User[]> {		
     	return this.http.get(this.userUrl)

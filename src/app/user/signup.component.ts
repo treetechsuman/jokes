@@ -36,11 +36,17 @@ export class SignupComponent implements OnInit  {
     if (!form.value.fullName) { return; }
     this.userService.create(this.user)
     .subscribe(
-      joke  => this.users.push(joke),
-      error =>  this.errorMessage = <any>error);
+      user  => this.users.push(user),
+      
+      error =>  this.errorMessage = <any>error,
+     );
       //console.log(form.value.title);
       this.router.navigate(['/users']);
   }
+  /*response =>{
+          localStorage.setItem('id_token', response.json().id_token);
+          this.router.navigate(['home']);
+        },*/
 	
 	
 }
