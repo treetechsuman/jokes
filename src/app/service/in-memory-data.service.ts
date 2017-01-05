@@ -52,7 +52,21 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       
     ];
-    return {jokes};
+    let users = [
+      {
+        id: 11, 
+        fullName: 'Suman Dahal',
+        email:"me.suman11@gmail.com",
+        password:'sumandahal',
+        status:true
+      },            
+    ];
+    let tokens = [
+      {
+        id_token:"jfalkuokigjikeoi"
+      }
+    ]
+    return {'jokes':jokes, 'users':users, 'tokens':tokens };
   }
   
 }
